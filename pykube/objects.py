@@ -334,6 +334,10 @@ class Job(NamespacedAPIObject, ScalableMixin):
     def parallelism(self, value):
         self.obj["spec"]["parallelism"] = value
 
+class MPIJob(NamespacedAPIObject):
+    version = "kubeflow.org/v1alpha2"
+    endpoint = "mpijobs"
+    kind = "MPIJob"
 
 class Namespace(APIObject):
     version = "v1"
